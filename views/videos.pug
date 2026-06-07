@@ -1,0 +1,33 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Videos
+  link(rel='stylesheet' href='/style.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+div(style='padding: 30px;')
+  .header
+    .logo(style='font-size: 20px;')
+      i.fa.fa-play-circle(style='font-size:50px;color:red')
+      h1 Videx
+    a(href='/form')
+      button.btn-2
+        | Add Video
+  h2 Videos
+  hr
+  .grid-container-1
+    each box in registered
+      .item 
+        video(
+            src="/" + box.video
+            poster="/" + box.image
+            width="100%"
+            height="200px"
+            controls
+            playsinline
+            style="border-radius: 10px; object-fit: cover;"
+        )
+        p #{box.description} :
+        p 999k views. 2 weeks ago
+
+    
