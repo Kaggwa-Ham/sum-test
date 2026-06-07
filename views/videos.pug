@@ -19,8 +19,8 @@ div(style='padding: 30px;')
     each box in registered
       .item 
         video(
-            src="/" + box.video
-            poster="/" + box.image
+            src=box.video
+            poster=box.image
             width="100%"
             height="200px"
             controls
@@ -29,5 +29,6 @@ div(style='padding: 30px;')
         )
         p #{box.description} :
         p 999k views. 2 weeks ago
+        
 
     

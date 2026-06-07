@@ -6,6 +6,8 @@ const form = require("./routes/formRoute")
 require("dotenv").config();
 
 
+
+
 //2. Instantiations
 const app = express();
 const PORT = 3005;
@@ -26,7 +28,7 @@ mongoose.connection
 
 
 //4. Middleware
-// app.use(express.static('public'));
+app.use(express.static('public'));
 // app.use('/public/uploads', express.static(__dirname + '/public/uploads'))
 app.use(express.urlencoded({ extended: false }));
 
