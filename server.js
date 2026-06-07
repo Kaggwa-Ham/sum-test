@@ -28,7 +28,9 @@ mongoose.connection
 
 
 //4. Middleware
-app.use(express.static('public'));
+// app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public'))); // Absolute path fix for Vercel
+// app.use(express.urlencoded({ extended: false }));
 // app.use('/public/uploads', express.static(__dirname + '/public/uploads'))
 app.use(express.urlencoded({ extended: false }));
 
