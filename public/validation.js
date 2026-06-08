@@ -27,16 +27,12 @@ form.addEventListener("submit", async (event) => {
     let isValid = true;
     
     // Clear and reset error displays before evaluation
-    titleError.style.display = "none";
-    title.classList.remove("error");
-    descriptionError.style.display = "none";
-    description.classList.remove("error");
-    dateError.style.display = "none";
-    date.classList.remove("error");
-    imageError.style.display = "none";
-    image.classList.remove("error");
-    videoError.style.display = "none";
-    video.classList.remove("error");
+    // 1. Clear and reset error displays defensively (Fixes the line 36 crash)
+    if (titleError) { titleError.style.display = "none"; title.classList.remove("error"); }
+    if (descriptionError) { descriptionError.style.display = "none"; description.classList.remove("error"); }
+    if (dateError) { dateError.style.display = "none"; date.classList.remove("error"); }
+    if (imageError) { imageError.style.display = "none"; image.classList.remove("error"); }
+    if (videoError) { videoError.style.display = "none"; video.classList.remove("error"); }
 
     // 1. Run Input Field Validations
     if (!title.value.trim()) {
